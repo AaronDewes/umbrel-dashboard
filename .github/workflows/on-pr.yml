@@ -1,0 +1,53 @@
+name: Lint & Build PR
+
+on:
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ✅ Checkout code
+        uses: actions/checkout@v2
+
+      - name: 🎨 Lint
+        run: yarn lint
+  
+  build:
+    # If the linter fails, don't build & push it
+    needs: lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ✅ Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+        id: qemu
+
+      - name: 🐳 Install Docker buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Prepare build dir
+        run: |
+          mkdir -p ../build
+          mkdir -p ../build/docker
+          echo ${{ github.event.number }} > ../build/PR
+
+      - name: 🐳 Create docker containers
+        run: |
+                docker buildx build \
+                --cache-from "type=local,src=/tmp/.buildx-cache" \
+                --cache-to "type=local,dest=/tmp/.buildx-cache" \
+                --platform linux/amd64,linux/arm64,linux/arm/v7 \
+                --tag dashboard:pr-${{ github.event.number }}-${{github.event.pull_request.head.sha}} \
+                --output "type=local,dest=../build/docker" ./
+
+      - name: Upload data
+        uses: actions/upload-artifact@v2
+        with:
+          name: data_for_other_workflows
+          path: ../build
+
