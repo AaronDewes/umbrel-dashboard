@@ -11,6 +11,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
 # ☂️ dashboard
 
 Dashboard is the web-based user interface of [Umbrel OS](https://github.com/getumbrel/umbrel-os) and is accessible at `http://umbrel.local`. It runs by-default as a containerized service.
