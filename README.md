@@ -1,4 +1,5 @@
 [![Umbrel Dashboard](https://static.getumbrel.com/github/github-banner-umbrel-dashboard.svg)](https://github.com/getumbrel/umbrel-dashboard)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FAaronDewes%2Fumbrel-dashboard.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FAaronDewes%2Fumbrel-dashboard?ref=badge_shield)
 
 [![Version](https://img.shields.io/github/v/release/getumbrel/umbrel-dashboard?color=%235351FB&label=version)](https://github.com/getumbrel/umbrel-dashboard/releases)
 [![Docker Build](https://img.shields.io/github/workflow/status/getumbrel/umbrel-dashboard/Docker%20build%20on%20push?color=%235351FB)](https://github.com/getumbrel/umbrel-dashboard/actions?query=workflow%3A"Docker+build+on+push")
@@ -75,3 +76,7 @@ If you're looking for a bigger challenge, before opening a pull request please [
 [![License](https://img.shields.io/badge/license-CC%20BY--NC--ND%204.0-%235351FB)](https://github.com/getumbrel/umbrel-dashboard/blob/master/LICENSE.md)
 
 [getumbrel.com](https://getumbrel.com)
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FAaronDewes%2Fumbrel-dashboard.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FAaronDewes%2Fumbrel-dashboard?ref=badge_large)
